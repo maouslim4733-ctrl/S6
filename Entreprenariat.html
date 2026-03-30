@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résumé Examen - Culture Entrepreneuriale S6</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 15mm;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            color: #1a1a1a;
+            background: #f3f4f6;
+        }
+        
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            page-break-after: always;
+            position: relative;
+        }
+        
+        .page:last-child {
+            page-break-after: auto;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #1e3a8a;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .header h1 {
+            font-size: 22pt;
+            color: #1e3a8a;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .header .subtitle {
+            font-size: 12pt;
+            color: #4b5563;
+            font-style: italic;
+        }
+        
+        .header .badge {
+            display: inline-block;
+            background: #dc2626;
+            color: white;
+            padding: 3px 12px;
+            border-radius: 15px;
+            font-size: 9pt;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+        
+        .section {
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 8px 15px;
+            font-size: 13pt;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title .icon {
+            font-size: 16pt;
+        }
+        
+        .content-box {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .definition-box {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px 0;
+        }
+        
+        .definition-box .label {
+            background: #f59e0b;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 9pt;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        
+        .key-points {
+            background: #ecfdf5;
+            border: 1px solid #10b981;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 8px 0;
+        }
+        
+        .key-points ul {
+            margin-left: 15px;
+        }
+        
+        .key-points li {
+            margin-bottom: 4px;
+            font-size: 10.5pt;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 10pt;
+        }
+        
+        th {
+            background: #1e3a8a;
+            color: white;
+            padding: 8px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        td {
+            padding: 8px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        tr:nth-child(even) {
+            background: #f9fafb;
+        }
+        
+        .quiz-section {
+            background: #faf5ff;
+            border: 2px solid #8b5cf6;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .quiz-title {
+            color: #6d28d9;
+            font-size: 14pt;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+            border-bottom: 2px solid #c4b5fd;
+            padding-bottom: 8px;
+        }
+        
+        .question {
+            background: white;
+            border: 1px solid #ddd6fe;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .question-number {
+            background: #8b5cf6;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 10pt;
+            margin-right: 8px;
+        }
+        
+        .question-text {
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+        
+        .options {
+            margin-left: 33px;
+        }
+        
+        .option {
+            padding: 4px 0;
+            font-size: 10.5pt;
+        }
+        
+        .option input[type="radio"] {
+            margin-right: 8px;
+        }
+        
+        .answer {
+            background: #dcfce7;
+            border-left: 3px solid #16a34a;
+            padding: 8px 12px;
+            margin-top: 8px;
+            margin-left: 33px;
+            border-radius: 0 5px 5px 0;
+            font-size: 10pt;
+            color: #166534;
+            display: none;
+        }
+        
+        .show-answers .answer {
+            display: block;
+        }
+        
+        .comparison-table {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th {
+            background: #374151;
+        }
+        
+        .highlight {
+            background: #fef08a;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #e5e7eb;
+            font-size: 9pt;
+            color: #6b7280;
+            position: absolute;
+            bottom: 20mm;
+            left: 20mm;
+            right: 20mm;
+        }
+        
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #1e3a8a;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12pt;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+        
+        .print-btn:hover {
+            background: #1e40af;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .toggle-answers-btn {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            background: #059669;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 11pt;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+        
+        .toggle-answers-btn:hover {
+            background: #047857;
+            transform: translateY(-2px);
+        }
+        
+        @media print {
+            .print-btn, .toggle-answers-btn {
+                display: none;
+            }
+            .page {
+                box-shadow: none;
+                margin: 0;
+                page-break-after: always;
+            }
+            body {
+                background: white;
+            }
+            .answer {
+                display: block !important;
+                background: #f0fdf4 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+        
+        .summary-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        
+        .summary-box h3 {
+            margin-bottom: 10px;
+            font-size: 12pt;
+        }
+        
+        .formula {
+            background: #1f2937;
+            color: #fbbf24;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 11pt;
+            margin: 10px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()">📄 Imprimer / Sauvegarder PDF</button>
+    <button class="toggle-answers-btn" onclick="document.body.classList.toggle('show-answers')">👁️ Afficher/Masquer Réponses</button>
+    
+    <!-- PAGE 1: INTRODUCTION & AXE 1 -->
+    <div class="page">
+        <div class="header">
+            <h1>📚 Culture Entrepreneuriale S6</h1>
+            <div class="subtitle">Résumé Complet pour Examen - Faculté des Sciences</div>
+            <div class="badge">Objectif: 19/20</div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">🎯</span>
+                AXE 1: Bases et Concepts de l'Entrepreneuriat
+            </div>
+            
+            <div class="definition-box">
+                <span class="label">DÉFINITION CLÉ</span>
+                <p><strong>Entreprendre</strong> = Transformer l'idée en action. Du verbe latin signifiant "s'engager personnellement".</p>
+            </div>
+            
+            <div class="content-box">
+                <h3 style="color: #1e3a8a; margin-bottom: 8px;">Les 3E Fondamentaux:</h3>
+                <table>
+                    <tr>
+                        <th>Concept</th>
+                        <th>Définition Essentielle</th>
+                        <th>Points Clés</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Entreprise</strong></td>
+                        <td>Unité économique juridiquement autonome qui produit des biens/services pour le marché</td>
+                        <td>• Personnalité juridique propre<br>• Combine ressources humaines, financières, matérielles<br>• Lieu d'action collective</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Entrepreneur</strong></td>
+                        <td>Acteur du changement qui identifie des opportunités et transforme une idée en valeur</td>
+                        <td>• Esprit d'initiative<br>• Autonomie<br>• Persévérance<br>• Tolérance à l'incertitude</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Entrepreneuriat</strong></td>
+                        <td>Processus de conception, lancement et exploitation d'une activité économique innovante</td>
+                        <td>• Innovation créative<br>• Prise de risque calculée<br>• Création de valeur</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="key-points">
+                <strong style="color: #059669;">🧠 Traits de personnalité de l'entrepreneur:</strong>
+                <ul>
+                    <li><strong>Esprit d'initiative:</strong> Agir sans attendre, être à l'origine de projets</li>
+                    <li><strong>Autonomie:</strong> Prendre des décisions et assumer leurs conséquences</li>
+                    <li><strong>Persévérance:</strong> Maintenir l'effort malgré les obstacles</li>
+                    <li><strong>Confiance en soi:</strong> Croyance en ses capacités</li>
+                    <li><strong>Tolérance à l'incertitude:</strong> Accepter le risque calculé</li>
+                </ul>
+            </div>
+            
+            <div class="key-points">
+                <strong style="color: #059669;">💡 Compétences clés:</strong>
+                <ul>
+                    <li>Identification des opportunités</li>
+                    <li>Créativité et innovation</li>
+                    <li>Prise de décision rapide</li>
+                    <li>Gestion et organisation</li>
+                    <li>Compétences relationnelles (communication, négociation)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">📊</span>
+                Typologies de l'Entrepreneuriat
+            </div>
+            
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Caractéristiques</th>
+                    <th>Exemples Concrets</th>
+                </tr>
+                <tr>
+                    <td><strong>Économique</strong></td>
+                    <td>Création de valeur, profit, croissance progressive</td>
+                    <td>Commerce, artisanat, tech startups</td>
+                </tr>
+                <tr>
+                    <td><strong>Social</strong></td>
+                    <td>Impact sociétal, double performance (social + économique)</td>
+                    <td>Grameen Bank, entreprises d'insertion</td>
+                </tr>
+                <tr>
+                    <td><strong>Éducatif</strong></td>
+                    <td>Développement des compétences, apprentissage</td>
+                    <td>Khan Academy, Junior Achievement</td>
+                </tr>
+                <tr>
+                    <td><strong>Culturel</strong></td>
+                    <td>Valorisation du patrimoine, innovation culturelle</td>
+                    <td>Festivals, artisanat traditionnel, apps éducatives culturelles</td>
+                </tr>
+                <tr>
+                    <td><strong>Intrapreneuriat</strong></td>
+                    <td>Agir comme entrepreneur au sein d'une entreprise existante</td>
+                    <td>Employé qui propose un nouveau service dans son entreprise</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="footer">
+            Page 1/6 - Résumé Culture Entrepreneuriale S6 - Faculté des Sciences
+        </div>
+    </div>
+    
+    <!-- PAGE 2: QCM AXE 1 -->
+    <div class="page">
+        <div class="header">
+            <h1>📝 QCM - Axe 1: Concepts Fondamentaux</h1>
+            <div class="subtitle">Testez vos connaissances - Cochez les bonnes réponses</div>
+        </div>
+        
+        <div class="quiz-section">
+            <div class="quiz-title">Quiz 1: Les 3E (Entreprendre, Entreprise, Entrepreneur)</div>
+            
+            <div class="question">
+                <div class="question-text">
+                    <span class="question-number">1</span>
+                    Quelle est la définition exacte de l'entreprise selon l'INSEE?
+                </div>
+                <div class="options">
+                    <div class="option"><input type="radio" name="q1"> A) Une organisation à but non lucratif</div>
+                    <div class="option"><input type="radio" name="q1"> B) Une unité économique juridiquement autonome dont la fonction principale est de produire des biens ou services pour le marché ✓</div>
+                    <div class="option"><input type="radio" name="q1"> C) Un groupe de personnes travaillant ensemble sans but économique</div>
+                    <div class="option"><input type="radio" name="q1"> D) Une structure gouvernementale de régulation</div>
+                </div>
+                <div class="answer">
+                    <strong>Réponse B:</strong> L'INSEE définit l'entreprise comme une unité économique juridiquement autonome produisant des biens/services pour le marché.
+                </div>
+            </div>
+            
+            <div class="question">
+                <div class="question-text">
+                    <span class="question-number">2</span>
+                    L'entrepreneuriat comprend combien de dimensions essentielles?
+                </div>
+                <div class="options">
+                    <div class="option"><input type="radio" name="q2"> A) 2 dimensions: innovation et profit</div>
+                    <div class="option"><input type="radio" name="q2"> B) 3 dimensions: innovation créative, prise de risque calculée et création de valeur ✓</div>
+                    <div class="option"><input type="radio" name="q2"> C) 4 dimensions: innovation, marketing, finance et RH</div>
+                    <div class="option"><input type="radio" name="q2"> D) 5 dimensions: product, price, place, promotion, people</div>
+                </div>
+                <div class="answer">
+                    <strong>Réponse B:</strong> Les 3 dimensions sont: innovation créative, prise de risque calculée, création de valeur.
+                </div>
+            </div>
+            
+            <div class="question">
+                <div class="question-text">
+                    <span class="question-number">3</span>
+                    Quel trait de personnalité permet à l'entrepreneur de maintenir l'effort malgré les échecs?
+                </div>
+                <div class="options">
+                    <div class="option"><input type="radio" name="q3"> A) L'autonomie</div>
+                    <div class="option"><input type="radio" name="q3"> B) La confiance en soi</div>
+                    <div class="option"><input type="radio" name="q3"> C) La persévérance ✓</div>
+                    <div class="option"><input type="radio" name="q3"> D) L'esprit d'initiative</div>
+                </div>
+                <div class="answer">
+                    <strong>Réponse C:</strong> La persévérance est la faculté à maintenir l'effort malgré les obstacles, échecs ou incertitude.
+                </div>
+            </div>
+            
+            <div class="question">
+                <div class="question-text">
+                    <span class="question-number">4</span>
+                    L'entrepreneuriat social se caractérise principalement par:
+                </div>
+                <div class="options">
+                    <div class="option"><input type="radio" name="q4"> A) La maximisation du profit</div>
+                    <div class="option"><input type="radio" name="q4"> B) L'impact sociétal avant tout, avec viabilité économique ✓</div>
+                    <div class="option"><input type="radio" name="q4"> C) L'utilisation exclusive des technologies numériques</div>
+                    <div class="option"><input type="radio" name="q4"> D) Le financement uniquement par subventions publiques</div>
+                </div>
+                <div class="answer">
+                    <strong>Réponse B:</strong> L'entrepreneuriat social vise l'impact sociétal (pauvreté, exclusion, environnement) tout en étant économiquement viable.
+                </div>
+            </div>
+            
+            <div class="question">
+                <div class="question-text">
+                    <span class="question-number">5</span>
+                    L'intrapreneuriat est défini comme:
+                </div>
+                <div class="options">
+                    <div class="option"><input type="radio" name="q5"> A) La création d'une entreprise indépendante</div>
+                    <div class="option"><input type="radio" name="q5"> B) L'action d'un salarié agissant comme entrepreneur au sein d'une entreprise existante ✓</div>
+                    <div class="option"><input type="radio" name="q5"> C) Un type d'entreprise multinationale</div>
+                    <div class="option"><input type="radio" name="q5"> D) Un programme gouvernemental de financement</div>
+                </div>
+                <div class="answer">
+                    <strong>Réponse B:</strong> L'intrapreneur est un salarié qui innove et prend des initiatives au sein de son entreprise, comme un entrepreneur mais sans créer sa propre structure.
+                </div>
+            </div>
+        </div>
+        
+        <div class="summary-box">
+            <h3>🎯 Points à retenir absolument:</h3>
+            <ul style="margin-left: 20px; line-height: 1.8;">
+                <li>Entreprendre = passage de l'intention à l'action</li>
+                <li>L'entrepreneur n'est pas un preneur de risques inconsidéré, mais un <strong>gestionnaire du risque</strong></li>
+                <li>L'intrapreneuriat = innovation interne sans risque financier personnel</li>
+                <li>Entrepreneuriat éducatif = développement de l'esprit entrepreneurial chez les apprenants</li>
+            </ul>
+        </div>
+        
+        <div class="footer">
+            Page 2/6 - QCM Axe 1 - Réponses en vert (pour révision)
+        </div>
+    </div>
+    
+    <!-- PAGE 3: AXE 2 - ENTREPRENEUR VS INTRAPRENEUR -->
+    <div class="page">
+        <div class="header">
+            <h1>🎯 AXE 2: Entrepreneur vs Intrapreneur</h1>
+            <div class="subtitle">Rôles, Responsabilités et Identification d'Opportunités</div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">⚖️</span>
+                Comparaison Entrepreneur vs Intrapreneur
+            </div>
+            
+            <div class="comparison-table">
+                <table>
+                    <tr>
+                        <th>Critère</th>
+                        <th>Entrepreneur</th>
+                        <th>Intrapreneur</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Statut</strong></td>
+                        <td>Indépendant, créateur de structure</td>
+                        <td>Salarié au sein d'une organisation existante</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Responsabilité</strong></td>
+                        <td>Totale (juridique, économique, stratégique)</td>
+                        <td>Circonscrite au périmètre du projet</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Risque financier</strong></td>
+                        <td>Élevé (investissement personnel, endettement)</td>
+                        <td>Limité (supporté par l'organisation)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Autonomie</strong></td>
+                        <td>Totale dans la décision</td>
+                        <td>Relative (conditionnée par la hiérarchie)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ressources</strong></td>
+                        <td>Doit créer et mobiliser ses propres ressources</td>
+                        <td>Bénéficie des ressources existantes de l'entreprise</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Échec</strong></td>
+                        <td>Conséquences durables (professionnelles et personnelles)</td>
+                        <td>Risque professionnel et symbolique (crédibilité)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Récompense</strong></td>
+                        <td>Profit personnel, indépendance</td>
+                        <td>Reconnaissance, évolution de carrière, partage des bénéfices possible</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">🤝</span>
+                Points Communs (Esprit Entrepreneurial)
+            </div>
+            
+            <div class="two-col">
+                <div class="key-points">
+                    <strong>Compétences partagées:</strong>
+                    <ul>
+                        <li>Créativité et innovation</li>
+                        <li>Passion et engagement</li>
+                        <li>Dynamisme et motivation</li>
+                        <li>Persévérance</li>
+                        <li>Capacité à inspirer et mobiliser</li>
+                        <li>Autonomie (plus marquée chez l'entrepreneur)</li>
+                    </ul>
+                </div>
+                
+                <div class="content-box" style="background: #fef3c7;">
+                    <strong style="color: #92400e;">Rôle de l'entreprise pour l'intrapreneuriat:</strong>
+                    <ul style="margin-top: 8px;">
+                        <li>Identifier et valoriser les comportements intrapreneuriaux</li>
+                        <li>Accepter la prise de risque et l'échec comme source d'apprentissage</li>
+                        <li>Former aux démarches d'innovation</li>
+                        <li>Accorder du temps pour des projets externes aux missions</li>
+                        <li>Encourager la collaboration transversale</li>
+                        <li>Récompenser l'initiative</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">💡</span>
+                Identification d'Opportunités
+            </div>
+            
+            <div class="definition-box">
+                <span class="label">DÉFINITION</span>
+                <p><strong>Opportunité</strong> = Situation favorable à la création de valeur. Une idée avec potentiel réel qui nécessite: besoin réel, utilisateurs prêts à payer, faisabilité technique/financière, contexte favorable.</p>
+            </div>
+            
+            <div class="formula">
+                Opportunité = Besoin réel + Faisabilité + Valeur ajoutée + Timing favorable
+            </div>
+            
+            <div class="content-box">
+                <h3 style="color: #1e3a8a; margin-bottom: 10px;">🔍 Techniques pour repérer un besoin:</h3>
+                <table>
+                    <tr>
+                        <th>Technique</th>
+                        <th>Description</th>
+                        <th>Exemple</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Observation directe</strong></td>
+                        <td>Regarder comment les gens utilisent un produit/service</td>
+                        <td>Café voit que clients attendent trop → commande en ligne</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Analyse des irritants</strong></td>
+                        <td>Identifier ce qui gêne ou frustre les utilisateurs</td>
+                        <td>Voyageurs perdent temps à chercher taxi → app de réservation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Signaux faibles</strong></td>
+                        <td>Indices précoces qu'un besoin pourrait émerger</td>
+                        <td>Télétravail courant → outils de collaboration à distance</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Design Thinking (Empathie)</strong></td>
+                        <td>Comprendre émotions et motivations</td>
+                        <td>Personne âgée peur de sortir → livraison médicaments</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Usage détourné</strong></td>
+                        <td>Voir comment un produit est utilisé autrement</td>
+                        <td>Drones pour filmer → service de captation vidéo événementielle</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">🧠</span>
+                Méthodes d'Idéation
+            </div>
+            
+            <div class="two-col">
+                <div class="content-box">
+                    <strong>Brainstorming:</strong> Produire max d'idées sans jugement<br><br>
+                    <strong>Mind Mapping:</strong> Organiser visuellement les idées<br><br>
+                    <strong>SCAMPER:</strong> 
+                    <ul style="margin-left: 15px; font-size: 9pt;">
+                        <li><strong>S</strong>ubstituter</li>
+                        <li><strong>C</strong>ombiner</li>
+                        <li><strong>A</strong>dapter</li>
+                        <li><strong>M</strong>odifier</li>
+                        <li>Autres <strong>U</strong>sages</li>
+                        <li><strong>E</strong>liminer</li>
+                        <li><strong>R</strong>eorganiser</li>
+                    </ul>
+                </div>
+                
+                <div class="content-box" style="background: #ecfdf5;">
+                    <strong>Design Thinking (5 étapes):</strong>
+                    <ol style="margin-left: 15px; margin-top: 8px;">
+                        <li><strong>Empathie:</strong> Comprendre l'utilisateur</li>
+                        <li><strong>Définition:</strong> Formuler le problème</li>
+                        <li><strong>Idéation:</strong> Générer des solutions</li>
+                        <li><strong>Prototypage:</strong> Créer version simplifiée</li>
+                        <li><strong>Test:</strong> Valider avec utilisateurs</li>
+                    </ol>
+                    <div style="margin-top: 10px; padding: 8px; background: #d1fae5; border-radius: 5px; font-size: 9pt;">
+                        <strong>Prototypage rapide:</strong> Fausse page de commande ou parcours papier pour tester avant développement complet.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            Page 3/6 - Axe 2 Partie I & II - Entrepreneuriat et Opportunités
+        </div>
+    </div>
+    
+    <!-- PAGE 4: QCM AXE 2 -->
+    <div class="page">
+        <div class="header">
+            <h1>📝 QCM - Axe 2: Entrepreneur vs Intrapreneur</h1>
+            <div class="subtitle">Testez vos connaissances sur les rôles et l'identification d'opportunités</div>
+        </div>
+        
+        <div class="quiz-section">
+            <div class="quiz-title">Quiz 2: Comparaison des Profils</div>
+            
+            <div class="question">
+                <div class="question-text">
+                    <span class="question-number">1</span>
+                    Quelle est la principale différence entre entrepreneur et intrapreneur concernant le risque financier?
+                </div>
+                <div class="options">
+                    <div class="option"><input type="radio" name="q6"> A) L'entrepreneur n'a aucun risque financier</div>
+                    <div class="option"><input type="radio" name="q6"> B) L'intrapreneur supporte tout le risque financier personnellement</div>
+                    <div class="option"><input type="radio" name="q6"> C) L'entrepreneur assume un risque financier personnel élevé (investissement, endettement) tandis que l'intrapreneur a un risque limité supporté par l'organisation ✓</div>
+                    <div class="option"><input type="radio" name="q6"> D) Les deux ont exactement le même niveau de risque financier</div>
+                </div>
+                <div class="answer">
+                    <strong>Réponse C:</strong> L'entrepreneur investit personnellement et peut s'endetter, l'intrapreneur utilise les ressources de l'entreprise.
+                </div>
+            </div>
+            
+            <div class="question">
+                <div class="question-text">
+                    <span class="question-number">2</span>
+                    L'autonomie de l'intrapreneur est:
+                </div>
+                <div class="options">
+                    <div class="option"><input type="radio" name="q7"> A) Totale, comme l'entrepreneur</div>
+                    <div class="option"><input type="radio" name="q7"> B) Relative, conditionnée par la hiérarchie et les procédures internes ✓</div>
+                    <div class="option"><input type="radio" name="q7"> C) Inexistante, il doit suivre les ordres sans initiative</div>
+                    <div class="option"><input type="radio" name="q7"> D) Définie par la loi du travail uniquement</div>
+                </div>
+                <div class="answer">
+                    <strong>Réponse B:</strong> L'intrapreneur doit convaincre et négocier pour faire avancer ses projets dans le cadre organisationnel.
+                </div>
+            </div>
+            
+            <div class="question">
+                <div class="question-text">
+                    <span class="question-number">3</span>
+                    Qu'est-ce qu'un "signal faible" dans l'identification d'opportunités?
+                </div>
+                <div class="options">
+                    <div class="option"><input type="radio" name="q8"> A) Une alarme de sécurité dans l'entreprise</div>
+                    <div class="option"><input type="radio" name="q8"> B) Un indice précoce qu'un besoin pourrait émerger ✓</div>
+                    <div class="option"><input type="radio" name="q8"> C) Une faiblesse financière détectée</div>
+                    <div class="option"><input type="radio" name="q8"> D) Un concurrent peu performant</div>
+                </div>
+                <div class="answer">
+                    <strong>Réponse B:</strong> Signal faible = indicateur anticipé d'une tendance future (ex: télétravail courant → opportunité outils collaboratifs).
+                </div>
+            </div>
+            
+            <div class="question">
+                <div class="question-text">
+                    <span class="question-number">4</span>
+                    Dans la méthode SCAMPER, que signifie le "C"?
+                </div>
+                <div class="options">
+                    <div class="option"><input type="radio" name="q9"> A) Créer</div>
+                    <div class="option"><input type="radio" name="q9"> B) Combiner ✓</div>
+                    <div class="option"><input type="radio" name="q9"> C) Contrôler</div>
+                    <div class="option"><input type="radio" name="q9"> D) Commercialiser</div>
+                </div>
+                <div class="answer">
+                    <strong>Réponse B:</strong> SCAMPER = Substitute, Combine, Adapt, Modify, Put to other uses, Eliminate, Rearrange.
+                </div>
+            </div>
+            
+            <div class="question">
+                <div class="question-text">
+                    <span class="question-number">5</span>
+                    Quelle est la première étape du Design Thinking?
+                </div>
+                <div class="options">
+                    <div class="option"><input type="radio" name="q10"> A) Prototypage</div>
+                    <div class="option"><input type="radio" name="q10"> B) Génération d'idées</div>
+                    <div class="option"><input type="radio" name="q10"> C) Empathie (comprendre l'utilisateur) ✓</div>
+                    <div class="option"><input type="radio" name="q10"> D) Test utilisateur</div>
+                </div>
+                <div class="answer">
+                    <strong>Réponse C:</strong> Le Design Thinking commence par l'empathie pour comprendre les besoins réels des utilisateurs.
+                </div>
+            </div>
+            
+            <div class="question">
+                <div class="question-text">
+                    <span class="question-number">6</span>
+                    Pour qu'une idée devienne une opportunité, il faut:
+                    <br><em>(Plusieurs réponses possibles - cochez toutes les bonnes)</em>
+                </div>
+                <div class="options">
+                    <div class="option"><input type="checkbox"> A) Un besoin réel ou latent ✓</div>
+                    <div class="option"><input type="checkbox"> B) Des utilisateurs prêts à payer ou adopter ✓</div>
+                    <div class="option"><input type="checkbox"> C) Une faisabilité technique et financière ✓</div>
+                    <div class="option"><input type="checkbox"> D) Un contexte favorable (marché, timing) ✓</div>
+                    <div class="option"><input type="checkbox"> E) Un brevet déposé obligatoirement</div>
+                </div>
+                <div class="answer">
+                    <strong>Réponses A, B, C, D:</strong> Les 4 critères essentiels sont: besoin réel, utilisateurs solvables, faisabilité, contexte favorable. Le brevet n'est pas obligatoire.
+                </div>
+            </div>
+        </div>
+        
+        <div class="summary-box" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+            <h3>⚠️ Erreurs fréquentes à éviter:</h3>
+            <ul style="margin-left: 20px;">
+                <li>Ne pas confondre "idée" et "opportunité" (toute idée n'est pas une opportunité)</li>
+                <li>L'intrapreneur n'est PAS un entrepreneur indépendant</li>
+                <li>L'innovation n'est pas forcément technologique (peut être organisationnelle, sociale...)</li>
+                <li>Le risque entrepreneurial est calculé et maîtrisé, pas subi</li>
+            </ul>
+        </div>
+        
+        <div class="footer">
+            Page 4/6 - QCM Axe 2 - Réponses détaillées incluses
+        </div>
+    </div>
+    
+    <!-- PAGE 5: ÉTUDE DE MARCHÉ & BMC -->
+    <div class="page">
+        <div class="header">
+            <h1>📊 Étude de Marché & Business Model Canvas</h1>
+            <div class="subtitle">Analyse de l'environnement et modélisation du projet</div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">🔍</span>
+                I. L'Étude de Marché
+            </div>
+            
+            <div class="definition-box">
+                <span class="label">DÉFINITION</span>
+                <p><strong>Étude de marché</strong> = Démarche méthodique d'analyse visant à collecter, analyser et interpréter des informations relatives à un marché afin de vérifier la viabilité d'un projet entrepreneurial.</p>
+            </div>
+            
+            <div class="key-points">
+                <strong style="color: #059669;">🎯 Pourquoi est-ce indispensable?</strong>
+                <ul>
+                    <li>Valider une idée avant d'investir temps et argent</li>
+                    <li>Comprendre les attentes réelles des clients</li>
+                    <li>Faciliter la prise de décision stratégique</li>
+                    <li>Constituer une base solide pour le Business Model</li>
+                </ul>
+                <div style="margin-top: 8px; padding: 8px; background: #fef3c7; border-radius: 5px; font-weight: bold; color: #92400e;">
+                    💡 À retenir: Une bonne idée n'est pas celle qui plaît à son créateur, mais celle qui répond à un besoin réel du marché.
+                </div>
+            </div>
+            
+            <div class="content-box">
+                <h3 style="color: #1e3a8a; margin-bottom: 10px;">🎯 La notion de Marché</h3>
+                <p><strong>Marché</strong> = Ensemble des personnes ou organisations susceptibles d'acheter un produit/service donné.</p>
+                <div class="formula">
+                    Marché = Besoin + Offre + Demande solvable
+                </div>
+                <p><strong>Types de marchés:</strong></p>
+                <ul>
+                    <li><strong>B2C (Business to Consumer):</strong> Entreprise → Consommateur final</li>
+                    <li><strong>B2B (Business to Business):</strong> Entreprise → Entreprise</li>
+                    <li>Marché de biens (produits matériels) vs Services</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">👥</span>
+                Comprendre et Définir sa Cible
+            </div>
+            
+            <div class="two-col">
+                <div class="content-box">
+                    <strong style="color: #1e3a8a;">3 Rôles à distinguer:</strong>
+                    <ul style="margin-top: 8px;">
+                        <li><strong>Client:</strong> Celui qui achète (payeur)</li>
+                        <li><strong>Utilisateur:</strong> Celui qui utilise</li>
+                        <li><strong>Prescripteur:</strong> Celui qui influence la décision</li>
+                    </ul>
+                    <div style="margin-top: 10px; font-size: 9pt; background: #e0e7ff; padding: 8px; border-radius: 5px;">
+                        <strong>Ex:</strong> Application pédagogique → Utilisateur: étudiant / Payeur: parent ou établissement
+                    </div>
+                </div>
+                
+                <div class="content-box" style="background: #faf5ff;">
+                    <strong style="color: #6b21a8;">Critères de Segmentation:</strong>
+                    <ul style="margin-top: 8px; font-size: 9.5pt;">
+                        <li><strong>Démographique:</strong> Âge, sexe, niveau d'étude</li>
+                        <li><strong>Géographique:</strong> Ville, région, urbain/rural</li>
+                        <li><strong>Socio-économique:</strong> Revenu, profession</li>
+                        <li><strong>Comportementale:</strong> Habitudes, fréquence, sensibilité prix</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="definition-box">
+                <span class="label">LE PERSONA</span>
+                <p><strong>Persona</strong> = Portrait fictif mais réaliste du client type. Outil de représentation pour mieux comprendre les attentes et adapter le produit.</p>
+                <div style="margin-top: 8px; background: white; padding: 10px; border-radius: 5px;">
+                    <strong>Éléments du Persona:</strong> Nom fictif, Âge, Situation pro/perso, Problèmes rencontrés, Objectifs, Comment s'informe-t-il?, Craintes/Objections
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">⚔️</span>
+                Analyse de la Concurrence
+            </div>
+            
+            <div class="content-box">
+                <div class="two-col">
+                    <div>
+                        <strong style="color: #dc2626;">Concurrence Directe:</strong>
+                        <p style="font-size: 10pt; margin-top: 5px;">Même produit, même cible</p>
+                        <p style="font-size: 9pt; color: #6b7280;">Ex: Deux applications de livraison de repas</p>
+                    </div>
+                    <div>
+                        <strong style="color: #ea580c;">Concurrence Indirecte:</strong>
+                        <p style="font-size: 10pt; margin-top: 5px;">Produit différent, même besoin</p>
+                        <p style="font-size: 9pt; color: #6b7280;">Ex: Restaurant traditionnel vs livraison app</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 15px; padding: 10px; background: #fef2f2; border-radius: 5px;">
+                    <strong>Analyse concurrentielle - Critères de comparaison:</strong>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 8px; font-size: 9.5pt;">
+                        <div>• Prix</div>
+                        <div>• Qualité</div>
+                        <div>• Accessibilité</div>
+                        <div>• Innovation</div>
+                        <div>• Image de marque</div>
+                        <div>• Service client</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">🔄</span>
+                Tendances Sectorielles
+            </div>
+            
+            <div class="key-points">
+                <strong>Sources des tendances:</strong>
+                <ul>
+                    <li><strong>Progrès technologiques:</strong> IA, digitalisation</li>
+                    <li><strong>Changements sociaux:</strong> Nouvelles consommations</li>
+                    <li><strong>Contraintes réglementaires:</strong> Nouvelles lois</li>
+                    <li><strong>Enjeux environnementaux:</strong> Développement durable</li>
+                </ul>
+            </div>
+            
+            <div style="background: #eff6ff; border: 2px solid #3b82f6; border-radius: 8px; padding: 12px; margin-top: 10px;">
+                <strong style="color: #1e40af;">Tendances actuelles clés:</strong>
+                <span class="highlight">Digitalisation</span>, 
+                <span class="highlight">Intelligence Artificielle</span>, 
+                <span class="highlight">Développement Durable</span>, 
+                <span class="highlight">Santé Connectée</span>, 
+                <span class="highlight">Enseignement à distance</span>
+            </div>
+        </div>
+        
+        <div class="footer">
+            Page 5/6 - Étude de Marché - Segmentation et Concurrence
+        </div>
+    </div>
+    
+    <!-- PAGE 6: BMC & COHÉRENCE -->
+    <div class="page">
+        <div class="header">
+            <h1>🎯 Business Model Canvas (BMC)</h1>
+            <div class="subtitle">Modélisation du projet entrepreneurial - Les 9 blocs</div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">🧩</span>
+                Le Business Model Canvas
+            </div>
+            
+            <div class="definition-box">
+                <span class="label">DÉFINITION</span>
+                <p><strong>Business Model</strong> = Décrit la manière dont une organisation: 1) Crée de la valeur, 2) Délivre cette valeur, 3) Capte de la valeur.</p>
+                <div class="formula">
+                    Question centrale: Comment le projet fonctionne-t-il économiquement?
+                </div>
+            </div>
+            
+            <div class="content-box">
+                <h3 style="text-align: center; color: #1e3a8a; margin-bottom: 15px;">Les 9 Blocs du BMC</h3>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; font-size: 9pt;">
+                    <div style="background: #dbeafe; border: 2px solid #3b82f6; padding: 10px; border-radius: 5px; text-align: center;">
+                        <strong style="color: #1e40af; font-size: 14pt;">1</strong><br>
+                        <strong>Segments de clients</strong><br>
+                        <span style="color: #6b7280;">Cibles identifiées</span>
+                    </div>
+                    <div style="background: #fee2e2; border: 3px solid #dc2626; padding: 10px; border-radius: 5px; text-align: center;">
+                        <strong style="color: #dc2626; font-size: 14pt;">2</strong><br>
+                        <strong>Proposition de valeur</strong><br>
+                        <span style="color: #6b7280;">Bénéfices offerts (CŒUR)</span>
+                    </div>
+                    <div style="background: #dbeafe; border: 2px solid #3b82f6; padding: 10px; border-radius: 5px; text-align: center;">
+                        <strong style="color: #1e40af; font-size: 14pt;">3</strong><br>
+                        <strong>Canaux</strong><br>
+                        <span style="color: #6b7280;">Moyens de distribution</span>
+                    </div>
+                    
+                    <div style="background: #dbeafe; border: 2px solid #3b82f6; padding: 10px; border-radius: 5px; text-align: center;">
+                        <strong style="color: #1e40af; font-size: 14pt;">4</strong><br>
+                        <strong>Relations clients</strong><br>
+                        <span style="color: #6b7280;">Type de relation établie</span>
+                    </div>
+                    <div style="background: #fef3c7; border: 2px solid #f59e0b; padding: 10px; border-radius: 5px; text-align: center;">
+                        <strong style="color: #d97706; font-size: 14pt;">5</strong><br>
+                        <strong>Sources de revenus</strong><br>
+                        <span style="color: #6b7280;">Comment génère-t-on de l'argent?</span>
+                    </div>
+                    <div style="background: #ecfdf5; border: 2px solid #10b981; padding: 10px; border-radius: 5px; text-align: center;">
+                        <strong style="color: #059669; font-size: 14pt;">6</strong><br>
+                        <strong>Ressources clés</strong><br>
+                        <span style="color: #6b7280;">Moyens nécessaires</span>
+                    </div>
+                    
+                    <div style="background: #ecfdf5; border: 2px solid #10b981; padding: 10px; border-radius: 5px; text-align: center;">
+                        <strong style="color: #059669; font-size: 14pt;">7</strong><br>
+                        <strong>Activités clés</strong><br>
+                        <span style="color: #6b7280;">Actions principales</span>
+                    </div>
+                    <div style="background: #ecfdf5; border: 2px solid #10b981; padding: 10px; border-radius: 5px; text-align: center;">
+                        <strong style="color: #059669; font-size: 14pt;">8</strong><br>
+                        <strong>Partenaires clés</strong><br>
+                        <span style="color: #6b7280;">Acteurs externes</span>
+                    </div>
+                    <div style="background: #fef3c7; border: 2px solid #f59e0b; padding: 10px; border-radius: 5px; text-align: center;">
+                        <strong style="color: #d97706; font-size: 14pt;">9</strong><br>
+                        <strong>Structure des coûts</strong><br>
+                        <span style="color: #6b7280;">Principales dépenses</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="key-points" style="background: #fef3c7; border-color: #f59e0b;">
+                <strong style="color: #92400e;">⚠️ Important:</strong>
+                <ul>
+                    <li>Le BMC se construit en ÉQUIPE, pas seul</li>
+                    <li>Il doit être confronté à des avis extérieurs</li>
+                    <li>C'est un outil vivant qui évolue avec le projet</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">🔗</span>
+                Cohérence Étude de Marché ↔ BMC
+            </div>
+            
+            <div class="content-box">
+                <p style="margin-bottom: 10px; font-weight: bold; color: #1e3a8a;">L'étude de marché et le BMC forment un ensemble cohérent:</p>
+                <table>
+                    <tr>
+                        <th>Résultats de l'Étude de Marché</th>
+                        <th>Traduction dans le BMC</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Cible</strong> (segmentation, persona)</td>
+                        <td><strong>Segment de clients</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Besoin identifié</strong> (problème, difficulté)</td>
+                        <td><strong>Proposition de valeur</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Concurrence</strong> (forces/faiblesses)</td>
+                        <td><strong>Différenciation</strong> (dans prop. valeur)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tendances</strong> (technologiques, sociales)</td>
+                        <td><strong>Innovation</strong> (produit/processus)</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="formula" style="background: #1e3a8a; color: white;">
+                Le BMC est la mise en forme stratégique des résultats de l'étude de marché
+            </div>
+            
+            <div class="definition-box">
+                <span class="label">PROPOSITION DE VALEUR</span>
+                <p>Élément central du projet: ce qui rend l'offre utile et attractive.</p>
+                <div style="margin-top: 8px; background: white; padding: 10px; border-radius: 5px; font-family: monospace;">
+                    <strong>Formule type:</strong><br>
+                    "Nous aidons [CLIENT] à résoudre [PROBLÈME] grâce à [SOLUTION]"
+                </div>
+                <div style="margin-top: 8px; font-size: 9.5pt;">
+                    <strong>Caractéristiques:</strong> Claire, Simple, Orientée client, Différenciante
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">✅</span>
+                QCM Final - Étude de Marché & BMC
+            </div>
+            
+            <div class="quiz-section" style="background: #f0f9ff; border-color: #0ea5e9;">
+                <div class="quiz-title" style="color: #0369a1; border-color: #7dd3fc;">Quiz 3: Validation des connaissances</div>
+                
+                <div class="question">
+                    <div class="question-text">
+                        <span class="question-number" style="background: #0ea5e9;">1</span>
+                        Quels sont les 3 éléments fondamentaux du marché?
+                    </div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q11"> A) Produit, Prix, Promotion</div>
+                        <div class="option"><input type="radio" name="q11"> B) Besoin, Offre, Demande solvable ✓</div>
+                        <div class="option"><input type="radio" name="q11"> C) Entreprise, Client, Concurrent</div>
+                        <div class="option"><input type="radio" name="q11"> D) Importation, Production, Exportation</div>
+                    </div>
+                    <div class="answer" style="background: #e0f2fe; border-color: #0ea5e9; color: #075985;">
+                        <strong>Réponse B:</strong> Marché = Besoin + Offre + Demande solvable (capacité à payer).
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-text">
+                        <span class="question-number" style="background: #0ea5e9;">2</span>
+                        Combien de blocs composent le Business Model Canvas?
+                    </div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q12"> A) 6 blocs</div>
+                        <div class="option"><input type="radio" name="q12"> B) 8 blocs</div>
+                        <div class="option"><input type="radio" name="q12"> C) 9 blocs ✓</div>
+                        <div class="option"><input type="radio" name="q12"> D) 12 blocs</div>
+                    </div>
+                    <div class="answer" style="background: #e0f2fe; border-color: #0ea5e9; color: #075985;">
+                        <strong>Réponse C:</strong> Le BMC comprend 9 blocs: segments clients, prop. valeur, canaux, relations clients, revenus, ressources, activités, partenaires, coûts.
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-text">
+                        <span class="question-number" style="background: #0ea5e9;">3</span>
+                        Le bloc central du BMC est:
+                    </div>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q13"> A) Les segments de clients</div>
+                        <div class="option"><input type="radio" name="q13"> B) La proposition de valeur ✓</div>
+                        <div class="option"><input type="radio" name="q13"> C) Les sources de revenus</div>
+                        <div class="option"><input type="radio" name="q13"> D) La structure des coûts</div>
+                    </div>
+                    <div class="answer" style="background: #e0f2fe; border-color: #0ea5e9; color: #075985;">
+                        <strong>Réponse B:</strong> La proposition de valeur est au centre car elle définit ce qui rend l'offre utile et attractive pour le client.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="summary-box" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+            <h3>🎓 Conseils pour l'examen (Viser 19/20):</h3>
+            <ol style="margin-left: 20px; line-height: 1.8;">
+                <li>Maîtrisez les <strong>définitions exactes</strong> (INSEE pour l'entreprise, 3 dimensions de l'entrepreneuriat)</li>
+                <li>Soyez capable de <strong>comparer entrepreneur/intrapreneur</strong> sur 5-6 critères précis</li>
+                <li>Connaissez les <strong>5 types d'entrepreneuriat</strong> avec exemples concrets</li>
+                <li>Montrez la <strong>cohérence</strong> entre étude de marché et BMC</li>
+                <li>Citez les <strong>techniques d'identification d'opportunités</strong> (observation, signaux faibles, design thinking)</li>
+                <li>Sachez expliquer le <strong>Design Thinking</strong> en 5 étapes</li>
+            </ol>
+        </div>
+        
+        <div style="text-align: center; margin-top: 20px; padding: 15px; background: #1e3a8a; color: white; border-radius: 10px;">
+            <h2>Bonne chance pour votre examen! 🍀</h2>
+            <p style="margin-top: 8px; font-size: 11pt;">Culture Entrepreneuriale S6 - Faculté des Sciences</p>
+        </div>
+        
+        <div class="footer">
+            Page 6/6 - Résumé Complet - Bonne révision!
+        </div>
+    </div>
+    
+    <script>
+        // Hint for users
+        console.log('💡 Astuce: Cliquez sur le bouton vert "Afficher/Masquer Réponses" pour voir les réponses aux QCM');
+    </script>
+</body>
+</html>
